@@ -1,0 +1,90 @@
+.teacher-quiz-section {
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #f7fefd;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    animation: slideInFromLeft 1s ease-out forwards; /* Aplicamos la animación */
+  }
+  
+  /* Efecto cuando el mouse pasa por encima */
+  .teacher-quiz-section:hover {
+    background-color: #b2dfdb9f; /* Cambiar el color de fondo cuando se pasa el mouse */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+    transform: translateY(-5px); /* Elevar el contenedor cuando el mouse pasa por encima */
+  }
+
+.teacher-quiz-section h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.teacher-quiz-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 🎮 Control animado */
+.controller-icon {
+  width: 60px;
+  height: 60px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 20px auto;
+  animation: floatGamepad 2s infinite ease-in-out;
+}
+
+@keyframes floatGamepad {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+/* Botón de juego */
+.quiz-button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+  background-color: #004d40;
+  transform: scale(1.05);
+}
+.click-hand {
+    width: 60px;
+    height: 60px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/545/545682.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+    animation: clickAnimation 1.2s infinite linear; /* Movimiento continuo */
+    transform-origin: bottom center; /* Hace que el "rebote" parezca más realista */
+  }
+  
+  @keyframes clickAnimation {
+    0% {
+      transform: translateX(0); /* Comienza en la posición inicial */
+    }
+    50% {
+      transform: translateX(25px); /* Se mueve 15px a la derecha */
+    }
+    100% {
+      transform: translateX(0); /* Vuelve a la posición inicial */
+    }
+  }
+  

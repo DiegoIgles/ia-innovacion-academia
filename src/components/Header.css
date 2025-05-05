@@ -1,0 +1,95 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #004d40, #00796b);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    animation: slideInFromRight  1.2s ease-in-out;
+    border-bottom: 4px solid #004d40;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-top: 0;
+  }
+  
+  header:hover {
+    box-shadow: 0 6px 20px rgba(0, 150, 136, 0.4);
+    transform: scale(1.01);
+  }
+  
+  /* Título */
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+    animation: popIn 1.2s ease;
+  }
+  
+  header h1:hover {
+    color: #b2dfdb;
+    transform: scale(1.05);
+  }
+  
+  /* Subtítulo */
+  header p {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+    animation: fadeIn 1.5s ease 0.5s;
+    animation-fill-mode: both;
+  }
+  
+  /* Subrayado animado */
+  header p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #b2dfdb;
+    transition: width 0.4s ease;
+  }
+  
+  header p:hover::after {
+    width: 100%;
+  }
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(190px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .rotating-gear {
+    font-size: 58px;
+    color: #b2dfdb;
+    animation: rotateGear 4s linear infinite;
+    margin-top: 10px;
+  }
+  
+  /* Animación de rotación infinita */
+  @keyframes rotateGear {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

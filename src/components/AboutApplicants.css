@@ -1,0 +1,128 @@
+.about-applicants-container {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al borde izquierdo y derecho */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Ancho máximo para pantallas grandes */
+    margin: 50px auto;
+    opacity: 0;
+    animation: slideInFromLeft 1s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Añadimos transición para suavizar el hover */
+  }
+  
+  /* Efecto cuando el mouse pasa por encima */
+  .about-applicants-container:hover {
+    background-color: #b2dfdb9f; /* Cambiar el color de fondo cuando se pasa el mouse */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+    transform: translateY(-5px); /* Elevar el contenedor cuando el mouse pasa por encima */
+  }
+  
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .about-applicants-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00796b;
+  }
+  
+  .about-applicants-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+    width: 60%; /* Establecemos un tamaño para que el texto no ocupe todo el ancho */
+  }
+  
+  .about-applicants-container img {
+    width: 35%; /* Tamaño de la imagen */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+  
+  .about-applicants-button {
+    background-color: #00796b;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 1.3s ease, background-color 0.3s ease;
+  }
+  
+  .about-applicants-button:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+  }
+  
+  .about-applicants-button:active {
+    transform: scale(1);
+  }
+  
+  /* Media Queries para pantallas más pequeñas */
+  
+  /* Para pantallas medianas (como tablets) */
+  @media (max-width: 768px) {
+    .about-applicants-container {
+      flex-direction: column; /* Cambia de fila a columna */
+      padding: 20px;
+    }
+  
+    .about-applicants-container img {
+      width: 70%; /* Hacemos que la imagen ocupe más espacio en pantallas pequeñas */
+      margin-top: 20px; /* Añadimos espacio entre el texto y la imagen */
+    }
+  
+    .about-applicants-container h2 {
+      font-size: 24px; /* Reducimos el tamaño del título */
+    }
+  
+    .about-applicants-container p {
+      width: 100%; /* El texto ocupa el 100% del ancho */
+      font-size: 14px; /* Reducimos el tamaño del texto */
+    }
+  
+    .about-applicants-button {
+      font-size: 14px; /* Reducimos el tamaño del botón */
+      padding: 10px 25px;
+    }
+  }
+  
+  /* Para pantallas pequeñas (como móviles) */
+  @media (max-width: 480px) {
+    .about-applicants-container {
+      padding: 15px;
+    }
+  
+    .about-applicants-container h2 {
+      font-size: 20px; /* Aún más pequeño el título */
+    }
+  
+    .about-applicants-container p {
+      font-size: 12px; /* Reducimos aún más el tamaño del texto */
+    }
+  
+    .about-applicants-container img {
+      width: 80%; /* La imagen ocupará aún más espacio en dispositivos pequeños */
+    }
+  
+    .about-applicants-button {
+      font-size: 12px;
+      padding: 8px 20px;
+    }
+  }
+  

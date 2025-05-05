@@ -1,0 +1,183 @@
+/* src/views/Home.css */
+
+.home-container {
+    padding: 0px 0px;
+    text-align: center;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .home-image {
+    width: 420px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px; /* esquinas suaves, NO circulares */
+    margin: 20px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fadeIn 2s ease-in-out 0.5s;
+    animation-fill-mode: both;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 1.2s ease-in-out;
+  }
+  
+  .animate-pop {
+    animation: popIn 1.2s ease-out;
+  }
+  
+  /* Estilo para el Botón */
+  button {
+    background-color: #00796b;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #004d40;
+    transform: translateY(-5px); /* Efecto de subida en hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el mouse */
+  }
+  
+  button:active {
+    transform: translateY(0px); /* Efecto de bajar cuando se hace clic */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Estilos para el Collage de Imágenes */
+ /* Estilos para el Collage de Imágenes */
+.image-collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro imágenes por fila */
+    gap: 15px;
+    margin: 40px 0;
+  }
+  
+  /* Hacer el collage responsive (en pantallas más pequeñas) */
+  @media (max-width: 768px) {
+    .image-collage {
+      grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila en pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-collage {
+      grid-template-columns: 1fr; /* 1 imagen por fila en pantallas muy pequeñas */
+    }
+  }
+  
+  .collage-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .collage-image:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Keyframes (animaciones) */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  /* Efecto de Hover: la imagen sube y cambia la sombra */
+
+.home-image:hover {
+    transform: translateY(-10px); /* Sube la imagen */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+  }
+  .modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal .close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: white;
+    border-radius: 50%;
+    padding: 5px 12px;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+  }
+  
