@@ -12,9 +12,9 @@ const TeacherQuizSection = () => {
 
   return (
     <div className="teacher-quiz-section animate-slide-in">
-      <h3>¿Qué tanto conoces al docente?</h3>
+      <h3>¿Qué tanto conoces IA+?</h3>
       <p>
-        Descubre cuánto sabes sobre tu profesor en esta divertida dinámica. ¡Pon a prueba tu memoria y gana premios!
+        Descubre cuánto sabes sobre tu docente en esta divertida dinámica. ¡Pon a prueba tu memoria!
       </p>
 
       <div className="click-hand" />

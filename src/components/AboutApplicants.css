@@ -34,7 +34,7 @@
   .about-applicants-container h2 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #00796b;
+    color: #000000;
   }
   
   .about-applicants-container p {
@@ -45,7 +45,7 @@
   }
   
   .about-applicants-container img {
-    width: 35%; /* Tamaño de la imagen */
+    width: 55%; /* Tamaño de la imagen */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -53,8 +53,8 @@
   }
   
   .about-applicants-button {
-    background-color: #00796b;
-    color: white;
+    background-color: #fff200;
+    color: rgb(0, 0, 0);
     padding: 12px 30px;
     font-size: 16px;
     border: none;
@@ -65,7 +65,7 @@
   }
   
   .about-applicants-button:hover {
-    background-color: #004d40;
+    background-color: #dacf02;
     transform: scale(1.05);
   }
   
@@ -96,10 +96,7 @@
       font-size: 14px; /* Reducimos el tamaño del texto */
     }
   
-    .about-applicants-button {
-      font-size: 14px; /* Reducimos el tamaño del botón */
-      padding: 10px 25px;
-    }
+   
   }
   
   /* Para pantallas pequeñas (como móviles) */
@@ -120,9 +117,6 @@
       width: 80%; /* La imagen ocupará aún más espacio en dispositivos pequeños */
     }
   
-    .about-applicants-button {
-      font-size: 12px;
-      padding: 8px 20px;
-    }
+  
   }
   

@@ -9,24 +9,29 @@ const QuizPage = () => {
   // Aquí puedes definir tus preguntas y opciones
   const questions = [
     {
-      question: "¿Cuál es el nombre del docente?",
-      options: ["Juan", "Mauricio", "Ana", "Pedro"],
-      answer: "Mauricio",
+      question: "¿Que significa IA+?",
+      options: ["Innovacion y Academia", "Innovador mas academia", "Innovacion mas academia", "Investigacion y academia"],
+      answer: "Innovacion mas academia",
     },
     {
-      question: "¿Director de que carrera es actualmente?",
-      options: ["Robotica", "Sistemas", "Informatica", "Redes"],
-      answer: "Redes",
+      question: "¿Que materia da el ingeniero Junior?",
+      options: ["Calculo 2", "Redes 1", "Lenguajes formales", "Sistemas operativos 2"],
+      answer: "Redes 1",
     },
     {
-      question: "¿Cuál es la especialidad del docente?",
-      options: ["Matemáticas", "Física", "Química", "Circuitos logicos"],
-      answer: "Circuitos logicos",
+      question: "¿Que materia da el ingeniero Leonardo Vargas?",
+      options: ["Ingles 1", "Auditoria informatica", "Redes 2", "Estructura de Datos 2"],
+      answer: "Auditoria informatica",
     },
     {
-        question: "¿A que se postula el ing Caballero?",
+        question: "¿A que se postula el ing Mauricio caballero?",
         options: ["Decano", "Guardia", "Vicedecano", "Vicerector"],
         answer: "Vicedecano",
+      },
+      {
+        question: "¿Quien dice la frase 'voj no sabej programar'?",
+        options: ["Ing Flores", "Ing Braulio", "Ing peinado", "Ing siles"],
+        answer: "Ing peinado",
       },
     // Agrega más preguntas según sea necesario
   ];

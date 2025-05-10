@@ -24,8 +24,8 @@
   }
   
   .quiz-option-button {
-    background-color: #00796b;
-    color: white;
+    background-color: #fffb00;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -35,7 +35,7 @@
   }
   
   .quiz-option-button:hover {
-    background-color: #004d40;
+    background-color: #c7ce03;
     transform: scale(1.05);
   }
   

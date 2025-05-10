@@ -6,8 +6,10 @@ const Header = () => {
   return (
     <header>
       <div className="header-content">
-        <h1>Mauricio Caballero Rua</h1>
-        <p>Cambiando la facultad</p>
+      <img src="/logoia.png" alt="Logo" className="logo" />
+
+        <h1>INNOVACIÓN MAS ACADEMIA</h1>
+        <p>F.I.C.C.T.</p>
         <FaCog className="rotating-gear" />
       </div>
     </header>

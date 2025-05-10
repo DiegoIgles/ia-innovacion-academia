@@ -9,7 +9,7 @@
   }
   
   .home-image {
-    width: 420px;
+    width: 320px;
     height: auto;
     object-fit: cover;
     border-radius: 20px; /* esquinas suaves, NO circulares */
@@ -38,8 +38,8 @@
   
   /* Estilo para el Botón */
   button {
-    background-color: #00796b;
-    color: white;
+    background-color: #f2ff00;
+    color: rgb(0, 0, 0);
     padding: 12px 30px;
     font-size: 18px;
     border: none;
@@ -52,7 +52,7 @@
   }
   
   button:hover {
-    background-color: #004d40;
+    background-color: #d8d804;
     transform: translateY(-5px); /* Efecto de subida en hover */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el mouse */
   }

@@ -49,8 +49,8 @@
 
 /* Botón de juego */
 .quiz-button {
-  background-color: #00796b;
-  color: white;
+  background-color: #fff700;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 12px 30px;
   font-size: 16px;
@@ -62,7 +62,7 @@
 }
 
 .quiz-button:hover {
-  background-color: #004d40;
+  background-color: #dbcc04;
   transform: scale(1.05);
 }
 .click-hand {

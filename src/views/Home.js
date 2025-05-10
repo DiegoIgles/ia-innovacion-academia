@@ -86,8 +86,9 @@ const Home = () => {
       <div className="animate-pop">
         <Button text="Propuestas" onClick={handleButtonClick} />
       </div>
-      <TeacherQuizSection />
       <AboutApplicants />
+      <TeacherQuizSection />
+      
       {/* Collage de imágenes */}
       <div className="image-collage">
         {collageImages.map((image, index) => (
