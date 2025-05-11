@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #3498db;
+  --text-color: #2c3e50;
+  --subtext-color: #7f8c8d;
+  --bg-card: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.applicants-view-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+.applicants-view-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.applicants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Tarjeta individual */
+.applicant-card {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.applicant-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.applicant-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 4px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.applicant-card:hover img {
+  transform: scale(1.05);
+}
+
+.applicant-card h3 {
+  margin: 12px 0 6px;
+  font-size: 1.25rem;
+}
+
+.applicant-card h4 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--subtext-color);
+  font-weight: 500;
+}
+
+.applicant-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .applicants-view-container {
+    padding: 30px 16px;
+  }
+
+  .applicants-view-container h1 {
+    font-size: 2rem;
+  }
+
+  .applicant-card {
+    padding: 20px;
+  }
+
+  .applicant-card img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+  .applicants-view-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .applicant-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .applicant-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .applicant-card p {
+    font-size: 0.9rem;
+  }
+}
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #f6ff00;
+  color: #000000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-button:hover {
+  background-color: #dad200;
+  transform: translateX(-4px);
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}
