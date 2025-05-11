@@ -21,7 +21,7 @@ import img9 from '../assets/photo9.jpg';
 import img10 from '../assets/photo10.jpg';
 import img11 from '../assets/photo11.jpg';
 import img12 from '../assets/photo12.jpg';
-
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 const Home = () => {
   const navigate = useNavigate();
   const [modalImage, setModalImage] = useState(null); // Estado para la imagen agrandada
@@ -111,6 +111,7 @@ const Home = () => {
           </div>
         </div>
       )}
+      <FloatingWhatsApp />
     </div>
   );
 };
