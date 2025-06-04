@@ -52,6 +52,8 @@ const Proposals = () => {
             <p><strong>Carrera:</strong> {resultado.carrera}</p>
             <p><strong>Facultad:</strong> {resultado.facultad}</p>
             <p><strong>Sede:</strong> {resultado.sede}</p>
+            <p><strong>Mesa:</strong> {resultado.mesa}</p>
+
             <p><strong>Vota Decano:</strong> <span style={getVoteStyle(resultado.vota_decano)}>{resultado.vota_decano}</span></p>
             <p><strong>Vota Rector:</strong> <span style={getVoteStyle(resultado.vota_rector)}>{resultado.vota_rector}</span></p>
             <p><strong>Voto General:</strong> <span style={getVoteStyle(resultado.vota_general)}>{resultado.vota_general}</span></p>
