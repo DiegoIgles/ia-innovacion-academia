@@ -15,7 +15,7 @@ const Proposals = () => {
       const response = await axios.get(`https://votaciones.cisistemasficct.com/api/estudiantes/registro/${registro}`);
       setResultado(response.data);
       setError('');
-      setShowAd(true); // Mostrar imagen tipo alerta
+      setShowAd(true);
     } catch (err) {
       setResultado(null);
       setError('No está habilitado para votar en la FICCT');
@@ -50,7 +50,7 @@ const Proposals = () => {
 
         {resultado && (
           <div style={styles.result}>
-            <h3>Datos del Estudiante</h3>
+            <h3 style={styles.resultTitle}>Datos del Estudiante</h3>
             <p><strong>Nombre:</strong> {resultado.nombre_completo}</p>
             <p><strong>Registro:</strong> {resultado.registro}</p>
             <p><strong>Carrera:</strong> {resultado.carrera}</p>
@@ -64,18 +64,13 @@ const Proposals = () => {
         )}
       </div>
 
-      {/* Botón flotante */}
       <button style={styles.floatingButton} onClick={() => navigate('/')}>
         🏠 Inicio
       </button>
 
-      {/* Imagen de propaganda (tipo alerta) */}
       {showAd && (
         <div style={styles.adOverlay} onClick={() => setShowAd(false)}>
-          <div
-            style={styles.adContent}
-            onClick={(e) => e.stopPropagation()} // Evita cerrar si clic dentro
-          >
+          <div style={styles.adContent} onClick={(e) => e.stopPropagation()}>
             <button style={styles.closeAd} onClick={() => setShowAd(false)}>×</button>
             <img src={profesImg} alt="Propaganda" style={styles.adImage} />
           </div>
@@ -85,29 +80,34 @@ const Proposals = () => {
   );
 };
 
+const amarillo = '#f2ff00';
+const amarilloSuave = '#ffffcc';
+
 const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
     padding: '2rem',
-    backgroundColor: '#f0f2f5',
+    backgroundColor: amarilloSuave,
     minHeight: '100vh',
     position: 'relative',
   },
   card: {
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
+    border: `2px solid ${amarillo}`,
     padding: '2rem',
-    borderRadius: '10px',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    borderRadius: '12px',
+    boxShadow: `0 4px 12px rgba(242, 255, 0, 0.4)`,
     width: '100%',
     maxWidth: '500px',
   },
   title: {
-    fontSize: '1.8rem',
+    fontSize: '1.9rem',
     marginBottom: '0.5rem',
+    color: '#666600',
   },
   subtitle: {
-    color: '#666',
+    color: '#555500',
     marginBottom: '1.5rem',
   },
   form: {
@@ -118,18 +118,21 @@ const styles = {
   },
   input: {
     padding: '0.75rem',
-    border: '1px solid #ccc',
+    border: `1px solid ${amarillo}`,
     borderRadius: '5px',
     fontSize: '1rem',
+    backgroundColor: '#fffff8',
   },
   button: {
     padding: '0.75rem',
-    backgroundColor: '#f2ff00',
+    backgroundColor: amarillo,
     color: 'black',
     fontSize: '1rem',
     border: 'none',
     borderRadius: '5px',
+    fontWeight: 'bold',
     cursor: 'pointer',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
   },
   error: {
     color: 'red',
@@ -138,17 +141,25 @@ const styles = {
   result: {
     marginTop: '2rem',
     lineHeight: '1.6',
+    backgroundColor: '#fffef3',
+    padding: '1rem',
+    borderRadius: '8px',
+    border: `1px dashed ${amarillo}`,
+  },
+  resultTitle: {
+    color: '#666600',
   },
   floatingButton: {
     position: 'fixed',
     bottom: '20px',
     right: '20px',
-    backgroundColor: '#f2ff00',
+    backgroundColor: amarillo,
     color: 'black',
     border: 'none',
     borderRadius: '50px',
     padding: '0.75rem 1.2rem',
     fontSize: '1rem',
+    fontWeight: 'bold',
     cursor: 'pointer',
     boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
   },
@@ -167,11 +178,11 @@ const styles = {
   },
   adContent: {
     position: 'relative',
-    backgroundColor: 'white',
+    backgroundColor: '#fffff4',
     padding: '1rem',
     borderRadius: '10px',
     textAlign: 'center',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
     maxWidth: '90vw',
     maxHeight: '90vh',
   },
