@@ -84,7 +84,7 @@ const Home = () => {
       </p>
 
       <div className="animate-pop">
-        <Button text="Propuestas" onClick={handleButtonClick} />
+        <Button text="Consulta si estas habilitado" onClick={handleButtonClick} />
       </div>
       <AboutApplicants />
       <TeacherQuizSection />
