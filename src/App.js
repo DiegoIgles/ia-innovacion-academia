@@ -14,7 +14,7 @@ function App() {
       <div>
         <Routes>  {/* Reemplazamos Switch con Routes */}
           <Route path="/" element={<Home />} />
-          <Route path="/proposals" element={<Proposals />} /> {/* Ruta para las propuestas */}
+          <Route path="/votantes" element={<Proposals />} /> {/* Ruta para las propuestas */}
           <Route path="/quiz" element={<QuizPage />} /> {/* Aquí es donde irás cuando hagas clic en el botón */}
 <Route path="/applicants" element={<ApplicantsView />} />
 

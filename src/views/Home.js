@@ -27,11 +27,11 @@ const Home = () => {
   const [modalImage, setModalImage] = useState(null); // Estado para la imagen agrandada
 
   const handleImageClick = () => {
-    navigate('/proposals');
+    navigate('/votantes');
   };
 
   const handleButtonClick = () => {
-    navigate('/proposals');
+    navigate('/votantes');
   };
 
   const handleCollageImageClick = (image) => {

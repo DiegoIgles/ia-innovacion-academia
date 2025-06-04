@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Proposals = () => {
   const [registro, setRegistro] = useState('');
   const [resultado, setResultado] = useState(null);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const buscarEstudiante = async () => {
     try {
@@ -56,6 +58,11 @@ const Proposals = () => {
           </div>
         )}
       </div>
+
+      {/* Botón flotante */}
+      <button style={styles.floatingButton} onClick={() => navigate('/')}>
+        🏠 Inicio
+      </button>
     </div>
   );
 };
@@ -68,6 +75,7 @@ const styles = {
     padding: '2rem',
     backgroundColor: '#f0f2f5',
     minHeight: '100vh',
+    position: 'relative',
   },
   card: {
     backgroundColor: 'white',
@@ -99,8 +107,8 @@ const styles = {
   },
   button: {
     padding: '0.75rem',
-    backgroundColor: '#007bff',
-    color: 'white',
+    backgroundColor: '#f2ff00',
+    color: 'black',
     fontSize: '1rem',
     border: 'none',
     borderRadius: '5px',
@@ -114,9 +122,21 @@ const styles = {
     marginTop: '2rem',
     lineHeight: '1.6',
   },
+  floatingButton: {
+    position: 'fixed',
+    bottom: '20px',
+    right: '20px',
+    backgroundColor: '#f2ff00',
+    color: 'black',
+    border: 'none',
+    borderRadius: '50px',
+    padding: '0.75rem 1.2rem',
+    fontSize: '1rem',
+    cursor: 'pointer',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+  },
 };
 
-// Función para colorear los votos
 const getVoteStyle = (valor) => ({
   color: valor === 'SI' ? 'green' : 'red',
   fontWeight: 'bold',
