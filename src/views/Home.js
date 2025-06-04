@@ -90,7 +90,7 @@ const Home = () => {
       <TeacherQuizSection />
       
       {/* Collage de imágenes */}
-      <div className="image-collage">
+      {/* <div className="image-collage">
         {collageImages.map((image, index) => (
           <img
             key={index}
@@ -100,17 +100,17 @@ const Home = () => {
             onClick={() => handleCollageImageClick(image)}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Modal para imagen grande */}
-      {modalImage && (
+      {/* {modalImage && (
         <div className="modal" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={modalImage} alt="Ampliada" />
             <span className="close" onClick={handleCloseModal}>&times;</span>
           </div>
         </div>
-      )}
+      )} */}
       <FloatingWhatsApp />
     </div>
   );

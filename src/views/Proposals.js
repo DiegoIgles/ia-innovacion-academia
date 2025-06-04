@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import profesImg from '../assets/profes.jpg';
 
 const Proposals = () => {
   const [registro, setRegistro] = useState('');
   const [resultado, setResultado] = useState(null);
   const [error, setError] = useState('');
+  const [showAd, setShowAd] = useState(false);
   const navigate = useNavigate();
 
   const buscarEstudiante = async () => {
@@ -13,9 +15,11 @@ const Proposals = () => {
       const response = await axios.get(`https://votaciones.cisistemasficct.com/api/estudiantes/registro/${registro}`);
       setResultado(response.data);
       setError('');
+      setShowAd(true); // Mostrar imagen tipo alerta
     } catch (err) {
       setResultado(null);
       setError('No está habilitado para votar en la FICCT');
+      setShowAd(false);
     }
   };
 
@@ -53,7 +57,6 @@ const Proposals = () => {
             <p><strong>Facultad:</strong> {resultado.facultad}</p>
             <p><strong>Sede:</strong> {resultado.sede}</p>
             <p><strong>Mesa:</strong> {resultado.mesa}</p>
-
             <p><strong>Vota Decano:</strong> <span style={getVoteStyle(resultado.vota_decano)}>{resultado.vota_decano}</span></p>
             <p><strong>Vota Rector:</strong> <span style={getVoteStyle(resultado.vota_rector)}>{resultado.vota_rector}</span></p>
             <p><strong>Voto General:</strong> <span style={getVoteStyle(resultado.vota_general)}>{resultado.vota_general}</span></p>
@@ -65,11 +68,23 @@ const Proposals = () => {
       <button style={styles.floatingButton} onClick={() => navigate('/')}>
         🏠 Inicio
       </button>
+
+      {/* Imagen de propaganda (tipo alerta) */}
+      {showAd && (
+        <div style={styles.adOverlay} onClick={() => setShowAd(false)}>
+          <div
+            style={styles.adContent}
+            onClick={(e) => e.stopPropagation()} // Evita cerrar si clic dentro
+          >
+            <button style={styles.closeAd} onClick={() => setShowAd(false)}>×</button>
+            <img src={profesImg} alt="Propaganda" style={styles.adImage} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-// Estilos reutilizables
 const styles = {
   container: {
     display: 'flex',
@@ -136,6 +151,45 @@ const styles = {
     fontSize: '1rem',
     cursor: 'pointer',
     boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+  },
+  adOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 999,
+    padding: '1rem',
+  },
+  adContent: {
+    position: 'relative',
+    backgroundColor: 'white',
+    padding: '1rem',
+    borderRadius: '10px',
+    textAlign: 'center',
+    boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+    maxWidth: '90vw',
+    maxHeight: '90vh',
+  },
+  adImage: {
+    width: '100%',
+    maxWidth: '320px',
+    height: 'auto',
+    borderRadius: '10px',
+  },
+  closeAd: {
+    position: 'absolute',
+    top: '5px',
+    right: '10px',
+    fontSize: '1.5rem',
+    color: '#333',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
   },
 };
 
